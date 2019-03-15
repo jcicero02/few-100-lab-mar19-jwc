@@ -1,10 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
     <title>Webpack Showcase</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>Welcome to Class.</h1>
+    <div class="container">
+        <header class="page-header">
+            <h1>Tip Calculator</h1>
+        </header>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+            </div>
+            <input type="number"
+                   class="form-control border"
+                   id="tip-input">
+        </div>
+        <div class="btn-group btn-group-toggle"
+             data-toggle="buttons"
+             id="option-list">
+            <label class="btn btn-secondary"
+                   id="tip-option1">
+                <input type="radio"
+                       name="tip-options"> 10%
+            </label>
+            <label class="btn btn-secondary"
+                   id="tip-option2">
+                <input type="radio"
+                       name="tip-options"> 15%
+            </label>
+            <label class="btn btn-secondary disabled"
+                   id="tip-option3">
+                <input type="radio"
+                       name="tip-options"> 20%
+            </label>
+        </div>
+        <div><span id="tip-amount">You are tipping</span></div>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item"
+                    id="bill-amount">Bill Amount:</li>
+                <li class="list-group-item"
+                    id="tip-percentage">Tip Percentage:</li>
+                <li class="list-group-item"
+                    id="amount-to-tip">Amount to Tip:</li>
+                <li class="list-group-item"
+                    id="total-to-be-paid">Total to be Paid:</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./index.ts"></script>
 </body>
+
 </html>
