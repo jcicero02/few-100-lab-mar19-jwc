@@ -62,7 +62,6 @@ function selectTipAmount() {
 }
 
 function calculateTip() {
-    console.log(tipInput.valueAsNumber)
     if (tipInput.valueAsNumber > 0) {
         let tip: number = (billTotalAmount * tipOption / 100);
         amountToTip.innerText = `Amount to Tip: $${tip.toFixed(2)}`
