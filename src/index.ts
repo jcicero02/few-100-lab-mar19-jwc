@@ -61,18 +61,18 @@ optionList.forEach(element => {
 optionList.forEach(element => {
     const el = element as HTMLLabelElement;
     if (el.classList.contains('disabled')) {
-        tipPercentage.innerText = `Tip Percentage: ${el.innerText}`;
-        tipAmount.innerText = `You are tipping ${el.innerText}`;
+        handleTipLabels(el.innerText);
     } else if (tipSelector === 'tip-option4') {
         let value = (el.children[0] as HTMLInputElement).valueAsNumber;
         tipOption = value;
-        tipPercentage.innerText = `Tip Percentage: ${localStorageTip}%`;
-        tipAmount.innerText = `You are tipping ${localStorageTip}%`;
+        handleTipLabels(localStorageTip + '%');
     }
 })
 
 
 let billTotalAmount: number;
+
+
 function handleTip() {
     tipInput.classList.remove('border-danger');
     billTotalAmount = tipInput.valueAsNumber;
@@ -113,11 +113,9 @@ function customTip() {
     tipOption = inputTag.valueAsNumber;
     localStorage.setItem(tipAmountKey, inputTag.value);
     if (inputTag.valueAsNumber) {
-        tipPercentage.innerText = `Tip Percentage: ${inputTag.valueAsNumber}%`;
-        tipAmount.innerText = `You are tipping ${inputTag.valueAsNumber}%`;
+        handleTipLabels(inputTag.valueAsNumber.toString() + '%')
     } else {
-        tipPercentage.innerText = `Tip Percentage:`;
-        tipAmount.innerText = `You are tipping`;
+        handleTipLabels('');
     }
     optionList.forEach(element => {
         element.classList.remove('disabled');
@@ -165,6 +163,11 @@ function split() {
     }
 }
 
+
+function handleTipLabels(value: string) {
+    tipPercentage.innerText = `Tip Percentage: ${value}`;
+    tipAmount.innerText = `You are tipping ${value}`;
+}
 
 
 
