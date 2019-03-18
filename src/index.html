@@ -45,6 +45,11 @@
                 <input type="radio"
                        name="tip-options"> 20%
             </label>
+            <label class="btn btn-secondary"
+                   id="tip-option4">
+                <input type="number"
+                       name="tip-options"> Custom Tip Percentage
+            </label>
         </div>
         <div><span id="tip-amount">You are tipping</span></div>
         <div>
@@ -58,6 +63,27 @@
                 <li class="list-group-item"
                     id="total-to-be-paid">Total to be Paid:</li>
             </ul>
+        </div>
+        <div>
+            <header class="page-header">
+                <h1>Number of Ways to Split the Bill</h1>
+            </header>
+            <div class="btn-group btn-group-toggle"
+                 data-toggle="buttons"
+                 id="split-input">
+                <label class="btn btn-secondary"
+                       id="split-option">
+                    <input type="number"
+                           name="split-options"
+                           value="1"> How many ways do you want to split the bill?
+                </label>
+            </div>
+            <p></p>
+            <div>
+                <ul class="list-group"
+                    id="split-list">
+                </ul>
+            </div>
         </div>
     </div>
     <script src="./index.ts"></script>
